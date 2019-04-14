@@ -27,91 +27,91 @@ describe("Math Functions", () => {
 
   describe("subtract", () => {
     it("should be a function", () => {
-      assert.typeOf(subtract, "number");
+        assert.isFunction(subtract);
     });
     it("should properly subtract two numbers", () => {
-      assert.isAbove(subtract(3, 2), 1);
+      assert.isAbove(subtract(6, 2), 3);
     });
   });
 
   describe("divide", () => {
-    it("should be a function", () => {
-      assert.instanceOf(divide, "number");
+    it("should be a function", () => {      
+        assert.isFunction(divide);
     });
     it("should return Infinity if we divide by 0", () => {
-      assert.isNotNumber(divide(5, 0));
+      assert.isNumber(divide(5, 0));
     });
   });
 
   describe("multiply", () => {
     it("should be a function", () => {
-      assert.typeOf(multiply, "number");
+        assert.isFunction(multiply);
     });
   });
 
   describe("areSameLength", () => {
     it("should be a function", () => {
-      assert.typeOf(areSameLength, "array");
+      assert.isFunction(areSameLength);
     });
     it("should return a boolean", () => {
-      assert.typeOf(areSameLength("hello", "world"), "number");
+      assert.isBoolean(areSameLength("hello", "world"),"number");
     });
     it("should return true if both strings are the same length", () => {
-      assert.isFalse(areSameLength("hello", "world"));
+      assert.isTrue(areSameLength("hello", "world"));
     });
     it("should return false if strings have different lengths", () => {
-      assert.isTrue(areSameLength("hello", "goodbye"));
+      assert.isFalse(areSameLength("hello", "goodbye"));
     });
   });
 
   describe("areEqual", () => {
     it("should be a function", () => {
-      assert.typeOf(areEqual, "object");
+      assert.isFunction(areEqual);
     });
     it("should return a boolean", () => {
-      assert.typeOf(areEqual("hello", "world"), "number");
+      assert.isBoolean(areEqual("hello", "world"), "number");
     });
     it("should return true if both numbers are the same", () => {
-      assert.isFalse(areEqual(2, 2));
+      assert.isTrue(areEqual(2, 2));
     });
     it("should return false if the numbers are different", () => {
-      assert.isTrue(areEqual(1, 2));
+      assert.isFalse(areEqual(1, 2));
     });
   });
 
   describe("isEven", () => {
     it("should be a function", () => {
-      assert.typeOf(isEven, "array");
+     assert.isFunction(isEven);
     });
     it("should return a boolean", () => {
-      assert.typeOf(areEqual("hello", "world"), "number");
+      assert.isBoolean(areEqual("hello", "world"), "number");
     });
     it("should return true if number is even", () => {
-      assert.isTrue(isEven(3));
+      assert.isTrue(isEven(4));
     });
   });
 
     describe("isOdd", () => {
         it("should be a function", () => {
-        assert.typeOf(isOdd, "boolean");
+        assert.isFunction(isOdd);
         });
         it("should return a boolean", () => {
-        assert.isNotBoolean(isOdd("hello", "world"));
+        assert.isBoolean(isOdd("hello", "world"));
         });
         it("should return false if the number is even", () => {
-        assert.isFalse(isOdd(3));
+        assert.isFalse(isEven(5));
         });
     });
 
     describe("roundNumber", () => {
             it("should be a function", () => {
-            assert.typeOf(roundNumber, "number");
+            assert.isFunction(roundNumber);
             });
             it("should round up when needed", () => {
-            assert.equal(roundNumber(1), 2);
+            assert.isNumber(roundNumber(1), 2);           
             });
             it("should round down when needed", () => {
-            assert.equal(roundNumber(0.4), 1);
+                assert.isNumber(roundNumber(0.4), 1);          
             });
     });
 });
